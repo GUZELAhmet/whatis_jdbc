@@ -3,7 +3,7 @@ import java.sql.*;
 public class ExecuteQuery01 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","1234");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Techpro","postgres","1234");
         Statement st = con.createStatement();
 
         //1. Örnek:  region id'si 1 olan "country name" değerlerini çağırın.
@@ -37,17 +37,17 @@ public class ExecuteQuery01 {
 
         //3.Örnek: "number_of_employees" değeri en düşük olan satırın tüm değerlerini çağırın.
 
-        System.out.println("--------------------------");
-        String sql3 ="SELECT * FROM companies WHERE number_of_employees = (SELECT MIN(number_of_employees) FROM companies)";
+//        System.out.println("--------------------------");
+//        String sql3 ="SELECT * FROM companies WHERE number_of_employees = (SELECT MIN(number_of_employees) FROM companies)";
+//
+//        ResultSet resultSet3 = st.executeQuery(sql3);
+//
+//        while (resultSet3.next()){
+//
+//            System.out.println(resultSet3.getInt(1)+"--"+resultSet3.getString(2)+"--"+resultSet3.getInt(3));
 
-        ResultSet resultSet3 = st.executeQuery(sql3);
-
-        while (resultSet3.next()){
-
-            System.out.println(resultSet3.getInt(1)+"--"+resultSet3.getString(2)+"--"+resultSet3.getInt(3));
-
-        }
-
+//        }
+//
         con.close();
         st.close();
     }

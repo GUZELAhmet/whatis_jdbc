@@ -9,7 +9,7 @@ public class Execute01 {
         Class.forName("org.postgresql.Driver");
 
         //2. Adım: Datbase'e bağlan
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","1234");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Techpro","postgres","1234");
 
         //3. Adım: Statement oluştur.
         Statement st = con.createStatement();
